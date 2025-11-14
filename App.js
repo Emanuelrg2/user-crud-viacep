@@ -1,28 +1,15 @@
 //Emanuel Ramos Gomes
+import 'react-native-get-random-values';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import ListUsers from './src/screens/ListUsers';
-import UserForm from './src/screens/UserForm';
-
-const Stack = createStackNavigator();
+import { StatusBar } from 'react-native';
+import AppNavigator from './src/navigation';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="ListUsers">
-        <Stack.Screen
-          name="ListUsers"
-          component={ListUsers}
-          options={{ title: 'Usuários Cadastrados' }}
-        />
-        <Stack.Screen
-          name="UserForm"
-          component={UserForm}
-          options={{ title: 'Cadastro/Edição de Usuário' }}
-        />
-      </Stack.Navigator>
+      <StatusBar barStyle="dark-content" />
+      <AppNavigator />
     </NavigationContainer>
   );
 }
